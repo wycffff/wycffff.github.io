@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Résumé of Yechuan Wei, a software developer in Turku, Finland, working on applied AI, real-time audio, and self-hosted applications.">
+  <meta name="theme-color" content="#f7f5ed">
+  <title>Résumé | Yechuan Wei</title>
+  <link rel="stylesheet" href="assets/cv.css">
+</head>
+<body>
+  <div class="page">
+    <nav class="page-tools" aria-label="Résumé actions">
+      <a href="index.html">Back to portfolio</a>
+      <button id="print-cv" type="button" hidden>Print résumé</button>
+    </nav>
+
+    <main class="resume" aria-labelledby="resume-name">
+      <header class="resume-header">
+        <div>
+          <h1 id="resume-name">Yechuan Wei</h1>
+          <p class="role">Software Developer · Applied AI</p>
+        </div>
+        <div class="contact">
+          <p>Turku, Finland</p>
+          <a href="https://github.com/wycffff">GitHub / wycffff</a>
+          <a href="https://www.linkedin.com/in/yechuan-wei-78a9b0292/">LinkedIn / Yechuan Wei</a>
+        </div>
+      </header>
+
+      <p class="intro">I’m a final-year ICT student at Turku University of Applied Sciences, specializing in Data Engineering and AI. I build applications that combine speech, vision, and language models with software people can use day to day. Available for full-time work from January 2027.</p>
+
+      <section class="resume-section" aria-labelledby="projects">
+        <h2 id="projects">Selected projects</h2>
+        <div class="entries">
+          <article class="entry">
+            <header><h3>Silto</h3><span>Mar 2026–present</span></header>
+            <p>Independently built a Flutter Android app and a real-time Node.js backend for face-to-face interpretation between Chinese and Finnish. The app detects which language is being spoken and displays both the original speech and the translation.</p>
+            <p class="tech">Flutter, Dart, Node.js, WebSocket, speech and translation APIs</p>
+          </article>
+          <article class="entry">
+            <header><h3>Weld traceability assistant</h3><span>May–Jul 2026</span></header>
+            <p>Built a tool that traces pipe networks in engineering drawings and uses a vision-language model and OCR to identify welds. Developed a Telegram agent for recording weld work and inspections in the field and exporting the weld history.</p>
+            <p class="tech">Python, OpenCV, OCR, vision-language models, SQLite, Telegram</p>
+          </article>
+          <article class="entry">
+            <header><h3>AI Interview</h3><span>Sep–Nov 2026</span></header>
+            <p>Led development of a self-hosted voice questionnaire platform that asks follow-up questions and turns responses into structured data and reports. Added Finnish and English workflows, PDF and Word export, and support for local speech recognition and language models.</p>
+            <p class="tech">Next.js, TypeScript, PostgreSQL, Docker, Whisper, Ollama</p>
+          </article>
+          <article class="entry">
+            <header><h3>Fruit-fly connectome driving</h3><span>2026</span></header>
+            <p>For my bachelor’s thesis, I built a neural network from fruit-fly brain wiring and trained it with reinforcement learning to drive from camera images in a simulator. <a href="https://github.com/wycffff/fly-connectome-driving">Thesis code on GitHub</a>.</p>
+            <p class="tech">Python, PyTorch, PPO, driving simulation</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="resume-section" aria-labelledby="experience">
+        <h2 id="experience">Experience</h2>
+        <div class="entries">
+          <article class="entry">
+            <header><h3>Software Development Intern</h3><span>Sep–Nov 2026</span></header>
+            <p class="affiliation">INSIGHT Lab, Turku University of Applied Sciences</p>
+            <p>Main developer of AI Interview. Prepared deployment and wrote English and Finnish user guides.</p>
+          </article>
+          <article class="entry">
+            <header><h3>AI Development Intern</h3><span>May–Jul 2026</span></header>
+            <p class="affiliation">CoRe research group, Turku University of Applied Sciences</p>
+            <p>Built the weld traceability assistant and a tool that uses extracted pipe networks to guide 3D reconstruction from 2D drawings.</p>
+          </article>
+          <article class="entry">
+            <header><h3>Founder and Managing Director</h3><span>2013–2026</span></header>
+            <p class="affiliation">Shanxi Yechuan Industry and Trade Co., Ltd.</p>
+            <p>Ran a supply business and later led operations for a school cafeteria serving about 1,300 students, managing staff, suppliers, budgets, and food safety.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="resume-section" aria-labelledby="education">
+        <h2 id="education">Education</h2>
+        <div class="entries">
+          <article class="entry">
+            <header><h3>BEng, Information and Communication Technology</h3><span>2023–Dec 2026 (expected)</span></header>
+            <p>Turku University of Applied Sciences · Data Engineering and AI</p>
+          </article>
+          <article class="entry">
+            <header><h3>BA, Broadcasting and Television Directing</h3><span>2010–2014</span></header>
+            <p>Sichuan Conservatory of Music</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script>
+    const printButton = document.getElementById('print-cv');
+    printButton.addEventListener('click', () => window.print());
+    printButton.hidden = false;
+  </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" role="img" aria-labelledby="title desc">
+  <title id="title">Voice to interview record</title>
+  <desc id="desc">Three strands of speech on apricot paper settle into ordered lines on an interview sheet.</desc>
+  <defs>
+    <pattern id="paper-grid" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#aa765c" opacity=".35"/></pattern>
+    <pattern id="diagonal" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(38)"><path d="M0 0v6" stroke="#af755e" stroke-width="1" opacity=".75"/></pattern>
+    <path id="wave-a" d="M65 249c29 0 29-12 43-12s16 48 31 48 19-125 36-125 20 165 41 165 14-104 34-104 20 41 34 41 20-23 40-23h56"/>
+    <path id="wave-b" d="M65 241c31 0 33 14 45 14s16-40 30-40 22 96 40 96 16-152 37-152 20 107 37 107 17-42 32-42 18 15 39 15h55"/>
+    <path id="wave-c" d="M65 246c31 0 33 8 43 8s18-22 31-22 19 50 35 50 22-95 39-95 13 108 35 108 24-71 43-71 17 15 34 15h55"/>
+    <g id="registration" fill="none" stroke="#a37961" stroke-width="1.1"><path d="M-5 0H5M0-5V5"/></g>
+  </defs>
+  <path fill="#f2d6c1" d="M0 0h800v480H0z"/>
+  <path fill="url(#paper-grid)" d="M0 0h800v480H0z"/>
+  <g fill="none" stroke="#b08973" stroke-width="1">
+    <path d="M65 239h380m-341-90v191m70-210v219m70-207v194m70-166v137" stroke-dasharray="2 6"/>
+    <path d="M65 362h257m-257-4v8m64-8v8m65-8v8m64-8v8m64-8v8"/>
+  </g>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke="#ac4c33" stroke-width="1.25" opacity=".68">
+      <use href="#wave-b" transform="translate(0 9)"/><use href="#wave-b" transform="translate(0 6)"/><use href="#wave-b" transform="translate(0 3)"/>
+    </g>
+    <use href="#wave-b" stroke="#b9583a" stroke-width="2.35"/>
+    <g stroke="#c77651" stroke-width="1.3" opacity=".85">
+      <use href="#wave-c" transform="translate(0 -6)"/><use href="#wave-c" transform="translate(0 -3)"/>
+    </g>
+    <use href="#wave-c" stroke="#af6044" stroke-width="1.8"/>
+    <g stroke="#a23e29" stroke-width="1.45">
+      <use href="#wave-a" transform="translate(0 -9)"/><use href="#wave-a" transform="translate(0 -6)"/><use href="#wave-a" transform="translate(0 -3)"/>
+    </g>
+    <use href="#wave-a" stroke="#843823" stroke-width="2.4"/>
+  </g>
+  <g stroke="#925139" stroke-linejoin="round">
+    <path d="m502 104 155-9 58 48 11 218-213 12z" fill="#d7a085" stroke-width="1.5"/>
+    <path d="m494 98 156-8 58 48 11 218-213 12z" fill="url(#diagonal)" stroke-width="1"/>
+    <path d="m485 90 157-8 58 48 12 219-213 12z" fill="#f9e7d5" stroke-width="2.2"/>
+    <path d="m642 82 4 50 54-2" fill="#eac3a9" stroke-width="1.7"/>
+  </g>
+  <g transform="translate(485 90) rotate(-3)">
+    <path d="M26 37h45m-45 8h72" stroke="#874932" stroke-width="3.3"/>
+    <path d="M26 60h152M26 233h152" stroke="#bd9079" stroke-width="1"/>
+    <g fill="#8c412c" font-family="ui-monospace,monospace" font-size="10.7" font-weight="bold">
+      <text x="26" y="89">01</text><text x="26" y="146">02</text><text x="26" y="203">03</text>
+    </g>
+    <g fill="none" stroke="#a16d56" stroke-width="1.6">
+      <path d="M51 85h108m-108 9h76m-76 9h94M51 142h99m-99 9h115m-115 9h62M51 199h120m-120 9h87"/>
+    </g>
+    <g fill="none" stroke="#be9276" stroke-width="1"><path d="M26 115h153m-153 57h153" stroke-dasharray="2 4"/></g>
+  </g>
+  <g fill="none" stroke="#9d4c32" stroke-width="1.65" stroke-linecap="round">
+    <path d="M373 230c51 0 43-53 86-53l37-2m-122 64c37 0 48-6 76-6l50-2m-126 17c57 0 42 44 85 44l44-3"/>
+  </g>
+  <g fill="#a45236">
+    <circle cx="496" cy="175" r="3"/><circle cx="500" cy="231" r="3"/><circle cx="503" cy="289" r="3"/>
+  </g>
+  <g>
+    <use href="#registration" x="42" y="41"/><use href="#registration" x="758" y="41"/><use href="#registration" x="42" y="439"/><use href="#registration" x="758" y="439"/>
+  </g>
+</svg>

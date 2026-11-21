@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" role="img" aria-labelledby="title desc">
+  <title id="title">Weld identification study</title>
+  <desc id="desc">An original isometric drawing of a stepped pipe, with three circled weld numbers and survey lines.</desc>
+  <defs>
+    <pattern id="draft" width="46" height="80" patternUnits="userSpaceOnUse">
+      <path d="M0 0l46 26.7v53.3M0 0v53.3L46 80M0 53.3l46-26.6" fill="none" stroke="#67795b" stroke-width=".7" opacity=".16"/>
+    </pattern>
+    <pattern id="hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(38)">
+      <path d="M0 0v5" stroke="#254c41" stroke-width="1.2"/>
+    </pattern>
+    <path id="spine" d="m135 310 104-60q10-6 20 0l61 35q11 6 21 0l91-53q11-6 11-19v-47q0-12 11-19l90-52q11-6 22 0l95 55"/>
+    <g id="seam" stroke="#203e34">
+      <path d="M-6-21c12-4 20 10 21 24 .8 11-2 21-8 24 10-1 15-12 14-25C20-13 11-26 1-27Z" fill="#6e8b72" stroke-width="1.35"/>
+      <path d="M1-27c-13 2-14 18-11 31 3 14 11 24 20 23" fill="none" stroke-width="1.5"/>
+      <path d="m7-23 3 3m4 3 2 4m1 3 2 5m0 4 1 4m0 4-.6 4m-1 4-1.5 3" fill="none" stroke-width="1.25"/>
+    </g>
+    <g id="target" fill="none" stroke="#465f49" stroke-width="1.25">
+      <circle r="3.2"/><path d="M-8 0h4m8 0h4M0-8v4m0 8v4"/>
+    </g>
+    <g id="mark" fill="none" stroke="#50694e" stroke-width="1.1"><path d="M-5 0H5M0-5V5"/></g>
+  </defs>
+  <path fill="#d7dfc8" d="M0 0h800v480H0z"/>
+  <path fill="url(#draft)" d="M0 0h800v480H0z"/>
+  <g fill="none" stroke="#708064" stroke-width="1" opacity=".76">
+    <path d="M65 352 249 246l83 48 110-64 110-63 148 85M135 310v70l114-66 83 48 111-64V205m109-110v72l111 64v-82" stroke-dasharray="5 5"/>
+    <path d="m113 378 32 18m206-41 31 18m78-75 28 16M132 390l117-67m97 46 120-69m94-208V62m98 87V119m-109-57 120 69"/>
+    <path d="m128 387 7 7m109-73 7 7m91 38 7 7m115-76 7 7m83-238 5-9m99 70 6-9"/>
+  </g>
+  <g opacity=".38" fill="#83957b">
+    <path d="m123 386 116-68q10-6 20 0l61 35q11 6 21 0l109-63 100-57 100 56 12-6-112-65-218 126-83-48-138 80z"/>
+  </g>
+  <use href="#spine" fill="none" stroke="#203f34" stroke-width="51" stroke-linejoin="round"/>
+  <use href="#spine" fill="none" stroke="#77957c" stroke-width="47" stroke-linejoin="round"/>
+  <use href="#spine" transform="translate(-1 -4)" fill="none" stroke="#a0b49a" stroke-width="36" stroke-linejoin="round"/>
+  <use href="#spine" transform="translate(-2 -10)" fill="none" stroke="#c1cfb1" stroke-width="22" stroke-linejoin="round"/>
+  <use href="#spine" transform="translate(-3 -15)" fill="none" stroke="#e1e7cf" stroke-width="6" stroke-linejoin="round"/>
+  <g transform="translate(135 310) rotate(-30)" stroke="#203f34" stroke-width="1.8">
+    <ellipse rx="13.5" ry="25" fill="#b3c4a5"/><ellipse rx="9.1" ry="19.4" fill="#385c4c"/><path d="M-1-18c6 3 8 10 8 18S5 16 1 18" fill="none" stroke="#77997d" stroke-width="2"/>
+  </g>
+  <g transform="translate(661 150) rotate(30)" stroke="#203f34" stroke-width="1.8">
+    <ellipse rx="13.5" ry="25" fill="#bbcbaf"/><ellipse rx="9.1" ry="19.4" fill="#456651"/><ellipse rx="9.1" ry="19.4" fill="url(#hatch)" stroke="none"/>
+  </g>
+  <use href="#seam" transform="translate(199 272) rotate(-32)"/>
+  <use href="#seam" transform="translate(374 265) rotate(-32)"/>
+  <use href="#seam" transform="translate(499 121) rotate(-32)"/>
+  <g fill="none" stroke="#345643" stroke-width="1.5">
+    <path d="m197 251-22-50h-42m241 87 25 51h45m53-240-23-44h-38"/>
+    <path d="m195 246 5 7-1-9m176 48-3-7 7 5m117-194 4 7v-8" fill="#345643"/>
+  </g>
+  <g fill="#dce4cf" stroke="#335440" stroke-width="1.7">
+    <circle cx="113" cy="201" r="18"/><circle cx="464" cy="339" r="18"/><circle cx="416" cy="55" r="18"/>
+  </g>
+  <g fill="#284b39" text-anchor="middle" font-family="ui-monospace,monospace" font-weight="bold" font-size="15">
+    <text x="113" y="206">01</text><text x="464" y="344">02</text><text x="416" y="60">03</text>
+  </g>
+  <g>
+    <use href="#mark" x="42" y="41"/><use href="#mark" x="758" y="41"/><use href="#mark" x="42" y="439"/><use href="#mark" x="758" y="439"/><use href="#target" x="552" y="167"/>
+  </g>
+</svg>

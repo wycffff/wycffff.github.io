@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f8f4">
+  <title>Yechuan Wei — Software developer in Turku</title>
+  <meta name="description" content="Selected software and applied AI work by Yechuan Wei in Turku, Finland. Explore Silto, a weld traceability assistant, and a voice interview platform.">
+  <meta property="og:title" content="Yechuan Wei — Software &amp; applied AI">
+  <meta property="og:description" content="Independent projects and research work in Turku, Finland.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wycffff.github.io/">
+  <link rel="canonical" href="https://wycffff.github.io/">
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/instrument-serif.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/signal.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="mast wrap">
+    <a class="brand" href="./" aria-label="Yechuan Wei, home"><img src="assets/mark.svg" alt="" width="34" height="34"> Yechuan Wei</a>
+    <nav aria-label="Main navigation"><a href="#work">Work</a><a href="#about">About</a><a href="cv.html">Résumé</a><a class="nav-contact" href="#contact">Contact</a></nav>
+  </header>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="name">
+      <div class="intro">
+        <p class="eyebrow"><span class="blue-line"></span> Software developer <span aria-hidden="true">/</span> Applied AI</p>
+        <h1 id="name">Yechuan <em>Wei.</em></h1>
+        <p class="intro-copy">I build software that listens to speech, reads engineering drawings, and helps people work across languages.</p>
+        <p class="place"><span class="pin" aria-hidden="true"></span> Turku, Finland</p>
+        <div class="actions"><a class="button primary" href="#work">Explore my work</a><a class="text-link" href="cv.html">View résumé</a></div>
+      </div>
+      <figure class="study">
+        <div class="study-title"><span class="wave-icon" aria-hidden="true">∿</span> Signal study</div>
+        <div class="plot"><canvas id="signal-art" aria-hidden="true"></canvas></div>
+        <figcaption><label for="signal-shape">Shape the wave</label><input type="range" id="signal-shape" min="0" max="100" value="44" aria-label="Shape the wave"><span class="ticks" aria-hidden="true"></span></figcaption>
+        <noscript><p class="no-script">Enable JavaScript to explore the interactive surface.</p></noscript>
+      </figure>
+    </section>
+    <section id="work" class="work wrap" aria-labelledby="work-title">
+      <div class="section-heading"><h2 id="work-title">Selected <em>work.</em></h2><span class="meta">2026</span></div>
+      <article class="feature">
+        <div class="silto-cover">
+          <div class="cover-type" aria-hidden="true"><span>Hei.</span><span lang="zh">你好。</span></div>
+          <div class="handset"><img src="assets/silto-live.webp" width="563" height="1000" loading="lazy" alt="Silto showing a sample library conversation in Finnish and Chinese."></div>
+        </div>
+        <div class="feature-copy">
+          <p class="eyebrow micro">Independent project · In testing</p>
+          <h3>Silto</h3><p class="subtitle">A conversation in two languages.</p>
+          <p>I built a phone app that interprets between Finnish and Chinese as people speak. It detects the language automatically, so either person can take the next turn.</p>
+          <ul class="stack" aria-label="Technologies"><li>Flutter</li><li>Node.js</li><li>WebSocket</li></ul>
+          <details><summary><span class="closed">Project notes</span><span class="open">Close notes</span></summary><p>I wrote the Android app and the real-time backend that connects speech recognition, translation, and speech synthesis. I tested how the system handles numbers, units, and negation in spoken exchanges. The screenshot shows a sample conversation from the app.</p></details>
+        </div>
+      </article>
+      <div class="projects">
+        <article class="project">
+          <img class="project-art" src="assets/weld-art.svg" alt="Illustration of a pipe network with its welds marked." width="800" height="480" loading="lazy">
+          <p class="eyebrow micro">CoRe research group · Turku UAS</p>
+          <h3>Weld traceability</h3>
+          <p>An assistant that reads piping drawings and keeps a history of each weld, from fabrication to inspection.</p>
+          <ul class="stack" aria-label="Technologies"><li>Python</li><li>OpenCV</li><li>OCR</li></ul>
+          <details><summary><span class="closed">Project notes</span><span class="open">Close notes</span></summary><p>I combined pipe topology with a vision-language model to locate welds and read their identifiers. A Telegram bot lets field workers attach inspection notes and photos to a joint, then export its history as a weld log.</p></details>
+        </article>
+        <article class="project">
+          <img class="project-art" src="assets/interview-art.svg" alt="Illustration of speech taking shape as a structured document." width="800" height="480" loading="lazy">
+          <p class="eyebrow micro">INSIGHT Lab · Turku UAS</p>
+          <h3>AI Interview</h3>
+          <p>A self-hosted platform where people answer questionnaires by speaking, in English or Finnish.</p>
+          <ul class="stack" aria-label="Technologies"><li>TypeScript</li><li>Next.js</li><li>Whisper</li></ul>
+          <details><summary><span class="closed">Project notes</span><span class="open">Close notes</span></summary><p>As the main developer, I took an early prototype through packaging and deployment. I added questionnaire publishing, spoken follow-up questions, and reports in Word and PDF. Local speech and language models let an organisation process interviews on its own server.</p></details>
+        </article>
+      </div>
+      <aside class="research"><span class="eyebrow micro">Bachelor’s thesis</span><a href="https://github.com/wycffff/fly-connectome-driving">Can a fruit-fly brain learn to drive?</a><span class="research-tech">PyTorch · Reinforcement learning</span></aside>
+    </section>
+    <section class="about wrap" id="about" aria-labelledby="about-title">
+      <div><p class="eyebrow micro">About me</p><h2 id="about-title">Based in <em>Turku.</em></h2></div>
+      <div class="bio"><p>Before I wrote software, I ran a business in China. Now I study data engineering and AI at Turku University of Applied Sciences, and build the kinds of tools I wish I could put into someone’s hands.</p><p>Outside of work, you’ll often find me fishing or at a TPS game. I’m looking for a software development role in Finland.</p><a class="text-link" href="cv.html">Education and experience</a></div>
+    </section>
+    <section id="contact" class="contact" aria-labelledby="contact-title"><div class="wrap contact-inner"><div><p class="eyebrow micro">Contact</p><h2 id="contact-title">Let’s <em>talk.</em></h2><p>Have a role in mind? Reach me on LinkedIn.</p></div><div class="contact-links"><a class="button" href="https://www.linkedin.com/in/yechuan-wei-78a9b0292/">Connect on LinkedIn</a><a class="text-link" href="https://github.com/wycffff">GitHub profile</a></div></div></section>
+  </main>
+  <footer class="wrap footer"><span>Yechuan Wei</span><a href="#main">Back to top</a></footer>
+</body></html>
