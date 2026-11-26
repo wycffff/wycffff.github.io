@@ -44,7 +44,7 @@
               <div class="idle">Odotetaan puhetta</div>
             </section>
             <div class="mid">
-              <div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <svg class="wave" viewBox="0 0 260 40" preserveAspectRatio="none" aria-hidden="true"><path/><path/><path/></svg>
               <button class="main-btn" tabindex="-1">▶ 开始</button>
               <span class="status">点击开始</span>
             </div>
@@ -67,9 +67,9 @@
       <article class="case" id="silto">
         <div class="case-head">
           <div>
-            <p class="eyebrow micro">Independent product · Android · silto.fi <span class="tag-ai">AI</span></p>
+            <p class="eyebrow micro">Own product · Android · silto.fi <span class="tag-ai">AI</span></p>
             <h3>Silto</h3>
-            <p class="lede">Real-time Chinese ⇄ Finnish interpretation for face-to-face conversations – at the doctor’s, at school, at an office counter. AI listens, translates and speaks; nothing is stored. Very few tools are built for this language pair. I designed and built the whole product on my own.</p>
+            <p class="lede">Real-time Chinese ⇄ Finnish interpretation for face-to-face conversations – at the doctor’s, at school, at an office counter. Speech recognition, an LLM translator and speech synthesis work together in about one second. Very few tools are built for this language pair. I designed and built the whole product on my own.</p>
             <ul class="stack"><li>Flutter</li><li>Node.js</li><li>WebSocket</li><li>Speechmatics</li><li>Azure Speech</li><li>OpenAI API</li><li>PostgreSQL</li><li>Stripe</li></ul>
           </div>
           <a class="button primary" href="https://silto.fi">Visit silto.fi</a>
@@ -80,19 +80,17 @@
             <ol>
               <li><b>Finnish speech recognition</b><div class="p">General speech models misheard everyday spoken Finnish and cut long turns in the middle of a sentence.</div><div class="s">I compared speech engines on real Finnish recordings, including colloquial speech, chose Speechmatics’ real-time medical model, and tuned voice detection so long turns stay whole.</div></li>
               <li><b>Chinese sentence breaking</b><div class="p">Chinese has no spaces, so the system treated a whole passage as one “word” and never split it for translation.</div><div class="s">Unicode word segmentation for Chinese, and complete confirmed sentences translated together instead of fragments.</div></li>
-              <li><b>Text that keeps jumping</b><div class="p">Speech recognition keeps changing its guess while people talk; translating every guess makes the screen jump and wastes AI calls.</div><div class="s">Live drafts are only shown; confirmed text goes to the OpenAI API for translation, and a late correction replaces the earlier line.</div></li>
-              <li><b>Medical accuracy</b><div class="p">A missed “not” or a wrong dose can be dangerous.</div><div class="s">A test set of medical sentences that checks negations, numbers, doses and units – used to choose the translation model.</div></li>
-              <li><b>Who is speaking?</b><div class="p">Pressing a button before every turn breaks the conversation.</div><div class="s">Automatic Chinese / Finnish detection picks the direction for each turn.</div></li>
+              <li><b>Which language is being spoken?</b><div class="p">Pressing a button before every turn breaks a conversation, but guessing the language wrong sends speech to the wrong recogniser.</div><div class="s">An automatic direction decision – first built in three layers, then simplified to two (Azure language identification + an LLM check), with a leaner server pipeline behind it.</div></li>
+              <li><b>Translation that doesn’t jump</b><div class="p">Speech recognition keeps changing its guess while people talk; translating every guess makes the screen jump.</div><div class="s">Live drafts are only shown; confirmed text goes to the OpenAI API, and a late correction replaces the earlier line.</div></li>
+              <li><b>Medical accuracy</b><div class="p">A missed “not” or a wrong dose can be dangerous.</div><div class="s">A test set of medical sentences checks negations, numbers, doses and units – it decided which translation model we use.</div></li>
             </ol>
           </div>
           <div class="two">
             <figure class="shot"><img src="assets/silto-real.webp" width="448" height="881" loading="lazy" alt="Silto during a live test: Finnish speech at the top, Chinese translation at the bottom."><figcaption>Real screen from a live test</figcaption></figure>
-            <div>
-              <div class="facts" style="grid-template-columns:1fr;margin-top:0">
-                <div><b>500+</b><span>automated tests for the speech and translation pipeline</span></div>
-                <div><b>2</b><span>speech engines: Finnish and Chinese</span></div>
-                <div><b>0</b><span>recordings kept after a conversation</span></div>
-              </div>
+            <div class="facts" style="grid-template-columns:1fr;margin-top:0">
+              <div><b>≈ 1 s</b><span>from speech to translation on screen (median)</span></div>
+              <div><b>500+</b><span>automated tests for the speech and translation pipeline</span></div>
+              <div><b>3 → 2</b><span>layers in the language-direction decision after redesign</span></div>
             </div>
           </div>
         </div>
@@ -104,29 +102,27 @@
           <div>
             <p class="eyebrow micro">CoRe research group · Turku UAS · internship <span class="tag-ai">AI</span></p>
             <h3>AI that reads engineering drawings</h3>
-            <p class="lede">An assistant that reads piping drawings, finds every weld and keeps its history from fabrication to inspection – and turns 2D drawings into 3D models through an AI-generated intermediate layer.</p>
-            <ul class="stack"><li>Python</li><li>Vision-language models</li><li>OpenCV</li><li>OCR</li><li>OpenAI tool calling</li><li>FLUX</li><li>TripoSR</li><li>Telegram</li><li>SQLite</li></ul>
+            <p class="lede">An AI assistant that reads piping drawings, finds every weld and keeps its history from fabrication to inspection – and turns 2D drawings into 3D models.</p>
+            <ul class="stack"><li>Python</li><li>Vision-language models</li><li>Topology / graphs</li><li>OpenCV</li><li>OCR</li><li>FLUX</li><li>TripoSR</li><li>OpenAI tool calling</li></ul>
           </div>
           <a class="button" href="https://github.com/wycffff/Weld_map_understanding_and_weld_traceability_assistant">Source code</a>
         </div>
         <div class="pipeline">
-          <figure><div class="img"><img src="assets/weld-1-drawing.webp" alt="Isometric piping drawing." loading="lazy"></div><figcaption><b>1 · Drawing</b>A photo of an isometric pipe drawing</figcaption></figure>
-          <figure><div class="img"><img src="assets/weld-2-topology.webp" alt="Pipe route extracted and highlighted on the drawing." loading="lazy"></div><figcaption><b>2 · Topology</b>The pipe network extracted as a graph</figcaption></figure>
-          <figure><div class="img"><img src="assets/weld-4-intermediate.webp" alt="AI-generated 3D-style image of the pipe." loading="lazy"></div><figcaption><b>3 · AI intermediate</b>LLM constraints + FLUX render a real-looking pipe</figcaption></figure>
-          <figure><div class="img"><img src="assets/weld-5-mesh.webp" alt="3D mesh previews of the pipe." loading="lazy"></div><figcaption><b>4 · 3D model</b>TripoSR builds the mesh</figcaption></figure>
+          <figure><div class="img"><img src="assets/weld-1-drawing.webp" alt="Isometric piping drawing." loading="lazy"></div><figcaption><b>1 · Drawing</b>Every factory draws differently</figcaption></figure>
+          <figure><div class="img"><img src="assets/weld-2-topology.webp" alt="Pipe route extracted and highlighted on the drawing." loading="lazy"></div><figcaption><b>2 · Topology</b>The pipe network as a graph – AI can now read it</figcaption></figure>
+          <figure><div class="img"><img src="assets/weld-4-intermediate.webp" alt="AI-generated 3D-style image of the pipe." loading="lazy"></div><figcaption><b>3 · Intermediate image</b>Generated to suit the 3D model</figcaption></figure>
+          <figure><div class="img"><img src="assets/weld-5-mesh.webp" alt="3D mesh previews of the pipe." loading="lazy"></div><figcaption><b>4 · 3D model</b>Built by TripoSR</figcaption></figure>
         </div>
         <div class="case-grid" style="margin-top:1.6rem">
           <div class="hard">
             <h4>The hard parts</h4>
             <ol>
-              <li><b>AI saw the drawing, but not where the welds were</b><div class="p">Vision-language models understood the drawings, but put weld boxes in the wrong place – even the strongest cloud model missed welds in focused tests.</div><div class="s">Topology + VLM: the pipe network is extracted as a graph to locate the welds, while the VLM and OCR read the labels and double-check. On our test drawings it found every weld and every drawing number.</div></li>
-              <li><b>2D lines don’t become 3D</b><div class="p">Image-to-3D models fail on thin black-and-white line drawings.</div><div class="s">An intermediate layer: the extracted topology is turned by a local LLM into structured constraints, FLUX renders a realistic pipe image, and TripoSR builds the 3D model. Very few have tried this route.</div></li>
-              <li><b>Workers are on site, not at a desk</b><div class="p">A desktop tool is useless on the shipyard floor.</div><div class="s">A Telegram agent with OpenAI tool calling: send a photo, confirm the welds, report progress and inspections by chat, and ask who welded a joint and when.</div></li>
+              <li><b>No two drawings are alike</b><div class="p">There is no common standard: every company and every factory draws pipes, symbols and weld marks its own way. Vision-language models could describe a drawing, but could not reliably find the welds on one they had never seen.</div><div class="s">Topology first: I extract the pipe network as a graph – pipes, bends, junctions – which is the same in every drawing style. On that structure the VLM and OCR can read the labels and locate the welds. Every weld and drawing number was found on our test drawings.</div></li>
+              <li><b>2D to 3D</b><div class="p">Image-to-3D models are transformers trained on pictures of real objects. Black lines on white paper mean nothing to them.</div><div class="s">An intermediate layer. Working back from how 3D generation models read images, I defined what the ideal input picture looks like; a local LLM turns the topology into exact constraints, FLUX generates that picture, and TripoSR builds the 3D model from it. Very few have tried this route.</div></li>
             </ol>
           </div>
-          <div class="shots">
-            <figure class="shot"><img src="assets/weld-3-telegram.webp" width="680" height="495" loading="lazy" alt="Telegram agent placing welds W02 to W04 on a drawing."><figcaption>The Telegram agent marks the welds it found</figcaption></figure>
-            <figure class="shot"><img src="assets/weld-trace.webp" width="670" height="240" loading="lazy" alt="Telegram agent answering who welded W03."><figcaption>Traceability by chat: “Who made W03?”</figcaption></figure>
+          <div>
+            <figure class="shot small-shot"><img src="assets/weld-3-telegram.webp" width="680" height="495" loading="lazy" alt="Telegram agent placing welds on a drawing."><figcaption>Field use: a Telegram agent records welds, progress and photos by chat</figcaption></figure>
           </div>
         </div>
       </article>
@@ -137,27 +133,23 @@
           <div>
             <p class="eyebrow micro">INSIGHT Lab · Turku UAS · internship · main developer <span class="tag-ai">AI</span></p>
             <h3>AI Interview</h3>
-            <p class="lede">A questionnaire that listens and asks back. People answer by speaking; the AI decides whether a follow-up question is needed, extracts structured answers and writes the report. A complete product that an organisation runs on its own server.</p>
-            <ul class="stack"><li>Next.js</li><li>TypeScript</li><li>PostgreSQL</li><li>Docker</li><li>Whisper</li><li>Ollama</li><li>OpenAI API</li></ul>
+            <p class="lede">From a simple demo to a commercial-grade SaaS product. People answer a questionnaire by speaking, the AI asks follow-up questions and writes the report – and an organisation can run it exactly the way its business, budget and data rules require. This is where my ten years of running a business went into the product.</p>
+            <ul class="stack"><li>Next.js</li><li>TypeScript</li><li>PostgreSQL</li><li>Docker</li><li>Kubernetes</li><li>Whisper</li><li>Ollama</li><li>OpenAI API</li></ul>
           </div>
         </div>
-        <div class="case-grid">
-          <div class="hard">
-            <h4>The hard parts</h4>
-            <ol>
-              <li><b>An AI that asks too much</b><div class="p">Endless follow-up questions annoy people.</div><div class="s">Staff set a purpose and a limit of one or two follow-ups per question; the AI only asks back within those limits.</div></li>
-              <li><b>Broken AI output</b><div class="p">Language models sometimes return malformed answers.</div><div class="s">Output is validated and repaired once; a valid answer is never lost if a follow-up fails.</div></li>
-              <li><b>Jobs that die halfway</b><div class="p">Speech and AI processing can crash in the middle.</div><div class="s">Database-backed jobs with leases, heartbeats and retries resume by themselves.</div></li>
-              <li><b>Data that must stay inside</b><div class="p">Some organisations cannot send interviews to the cloud.</div><div class="s">Local Whisper and Ollama, switchable to cloud APIs, installed with one command.</div></li>
-            </ol>
-          </div>
-          <div class="shots">
-            <figure class="shot"><video src="assets/ai-interview-promo.mp4" poster="assets/interview-poster.webp" controls preload="none" playsinline></video><figcaption>Product video (2:26)</figcaption></figure>
-            <div class="two">
-              <figure class="shot"><img src="assets/interview-admin.webp" width="1100" height="619" loading="lazy" alt="AI Interview staff view with published questionnaires."><figcaption>Staff: questionnaires</figcaption></figure>
-              <figure class="shot"><img src="assets/interview-mobile.webp" width="375" height="811" loading="lazy" alt="AI Interview on a phone: the respondent answers by voice."><figcaption>Respondent: answer by voice</figcaption></figure>
-            </div>
-          </div>
+        <figure class="shot wide-video"><video src="assets/ai-interview-promo.mp4" poster="assets/interview-poster.webp" controls preload="none" playsinline></video><figcaption>Product video (2:26)</figcaption></figure>
+        <div class="deploy"><span>Local AI (Whisper + Ollama)</span><span>Cloud AI APIs</span><span>Own server or a laptop</span><span>Kubernetes / CSC Rahti</span></div>
+        <div class="cap-grid">
+          <div><b>Any deployment</b><p>One-command install on Windows or Linux, a public HTTPS server, or a Kubernetes cluster. Switch AI providers without breaking a single invitation link.</p></div>
+          <div><b>Built for organisations</b><p>Staff roles, versioned questionnaires, invitation links and QR codes, English and Finnish, PDF / Word / JSON reports.</p></div>
+          <div><b>AI with limits</b><p>Staff decide per question whether the AI may ask back, why, and at most how often. Malformed AI output is validated and repaired.</p></div>
+          <div><b>Reliable</b><p>Background jobs with leases, heartbeats and retries resume by themselves after a crash or restart.</p></div>
+          <div><b>Privacy-ready</b><p>Data stays in-house if needed; retention, privacy requests, deletion records, backup and restore are built in.</p></div>
+          <div><b>Documented</b><p>Complete user manuals in English and Finnish for installation, operation and maintenance.</p></div>
+        </div>
+        <div class="mini-shots">
+          <figure class="shot"><img src="assets/interview-admin.webp" width="1100" height="619" loading="lazy" alt="AI Interview staff view with published questionnaires."><figcaption>Staff: questionnaires</figcaption></figure>
+          <figure class="shot"><img src="assets/interview-mobile.webp" width="375" height="811" loading="lazy" alt="AI Interview on a phone: the respondent answers by voice."><figcaption>Respondent: answer by voice</figcaption></figure>
         </div>
       </article>
 
@@ -165,22 +157,22 @@
       <article class="case" id="thesis">
         <div class="case-head">
           <div>
-            <p class="eyebrow micro">Bachelor’s thesis · AI research <span class="tag-ai">AI</span></p>
+            <p class="eyebrow micro">Bachelor’s thesis · AI research on supercomputers <span class="tag-ai">AI</span></p>
             <h3>Can a fly brain drive a car?</h3>
-            <p class="lede">I connected a neural network built from the real wiring of a fruit-fly brain to a driving simulator and trained it with reinforcement learning to steer from camera images. Every run is recorded and can be replayed.</p>
-            <ul class="stack"><li>PyTorch</li><li>Reinforcement learning (PPO)</li><li>Driving simulator</li><li>CSC supercomputers</li></ul>
+            <p class="lede">I am not a biologist – but with AI and machine learning I can explore frontier biology. I connected a neural network built from the real wiring of a fruit-fly brain to a driving simulator and trained it with reinforcement learning to steer from camera images, running the experiments on CSC’s Roihu supercomputer.</p>
+            <ul class="stack"><li>PyTorch</li><li>Reinforcement learning (PPO)</li><li>Unity simulator</li><li>CSC Roihu</li><li>Slurm</li></ul>
           </div>
           <a class="button" href="https://wycffff.github.io/fly-connectome-driving/">Full story</a>
         </div>
         <div class="case-grid">
-          <figure class="shot"><img src="assets/thesis-film.webp" width="1100" height="618" loading="lazy" alt="Can a fly brain drive a car? Neurons over a road."><figcaption>Fly connectome × simulated car</figcaption></figure>
+          <figure class="shot"><img src="assets/thesis-brain.webp" width="1200" height="675" loading="lazy" alt="Rendering of the fruit-fly brain connectome."><figcaption>The fruit-fly brain wiring used as the neural core</figcaption></figure>
           <div>
             <div class="facts">
               <div><b>176,422</b><span>neurons in the model</span></div>
-              <div><b>6.3 M</b><span>connections between them</span></div>
-              <div><b>160×120</b><span>camera image as input</span></div>
+              <div><b>32</b><span>simulators in parallel on one Roihu GPU</span></div>
+              <div><b>238</b><span>recorded experiments and jobs</span></div>
             </div>
-            <figure class="shot" style="margin-top:1rem"><img src="assets/thesis-flow.webp" width="900" height="756" loading="lazy" alt="Signal flow from camera to fly neurons to steering."><figcaption>From camera to neurons to steering</figcaption></figure>
+            <figure class="shot" style="margin-top:1rem"><img src="assets/thesis-road.webp" width="1112" height="196" loading="lazy" alt="Camera frames from the simulated car."><figcaption>What the fly brain sees: the car’s camera</figcaption></figure>
           </div>
         </div>
       </article>

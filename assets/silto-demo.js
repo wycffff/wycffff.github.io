@@ -17,6 +17,27 @@
   const replay = root.querySelector('.demo-replay');
 
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Flowing sound-wave lines between the two panels, like the real app.
+  const wavePaths = [...root.querySelectorAll('.wave path')];
+  let phase = 0, amp = 2;
+  function drawWave() {
+    const live = screen.classList.contains('live');
+    amp += ((live ? 11 : 2) - amp) * 0.06;
+    phase += live ? 0.09 : 0.03;
+    wavePaths.forEach((p, k) => {
+      const f = 1.6 + k * 0.45, a = amp * (1 - k * 0.22), o = k * 1.3;
+      let d = '';
+      for (let x = 0; x <= 260; x += 4) {
+        const env = Math.sin(Math.PI * x / 260);
+        const y = 20 + Math.sin(x / 260 * Math.PI * 2 * f + phase + o) * a * env;
+        d += (x ? 'L' : 'M') + x + ' ' + y.toFixed(2);
+      }
+      p.setAttribute('d', d);
+    });
+    if (!reduce) requestAnimationFrame(drawWave);
+  }
+  drawWave();
   const wait = (ms) => new Promise((r) => setTimeout(r, reduce ? 0 : ms));
   let run = 0;
 
