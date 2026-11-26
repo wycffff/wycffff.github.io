@@ -30,3 +30,5 @@ h1,h2,h3,.subtitle{font-family:var(--serif);font-weight:400}h1{font-size:clamp(6
 @media(max-width:480px){.mast nav a[href="cv.html"]{display:none}.brand{white-space:nowrap}.brand img{flex:none}.mast nav{gap:1rem}}
 @media(max-width:380px){.mast nav{gap:.58rem}.nav-contact{border:0;padding:0}.mast .brand{font-size:.92rem}.hero .eyebrow{font-size:.74rem}}
 @media(prefers-reduced-motion:reduce){:root{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+.skills{border-top:1px solid var(--rule);padding:2.4rem 0 3.6rem}.skill-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1.2rem,2.6vw,2.6rem)}.skill-grid h3{font-size:clamp(1.6rem,2.1vw,2.1rem);line-height:1.1;letter-spacing:-.02em;margin-bottom:.6rem}.skill-grid p{font-size:.96rem;color:#354239}.skill-grid .stack{margin:.9rem 0 0}.feature .actions{margin-top:.4rem}
+@media (max-width:900px){.skill-grid{grid-template-columns:1fr 1fr}}@media (max-width:560px){.skill-grid{grid-template-columns:1fr}}
